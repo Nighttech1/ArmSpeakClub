@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vernatun Brandbook</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&amp;family=Libre+Caslon+Text:wght@400;700&amp;family=Work+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f6f3ed",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#604100",
+                        "tertiary-fixed-dim": "#f8bc58",
+                        "surface-bright": "#fcf9f3",
+                        "surface-container-highest": "#e5e2dc",
+                        "inverse-surface": "#31312d",
+                        "primary-fixed-dim": "#ffb694",
+                        "secondary-fixed": "#d0e4ff",
+                        "secondary-fixed-dim": "#9acbff",
+                        "on-tertiary-fixed": "#281900",
+                        "outline": "#897268",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed-variant": "#004a79",
+                        "error-container": "#ffdad6",
+                        "primary": "#9a4109",
+                        "on-primary-fixed-variant": "#7b2f00",
+                        "on-background": "#1c1c18",
+                        "surface": "#fcf9f3",
+                        "on-primary-fixed": "#351000",
+                        "on-surface": "#1c1c18",
+                        "surface-container": "#f0eee8",
+                        "error": "#ba1a1a",
+                        "primary-container": "#ba5822",
+                        "tertiary-fixed": "#ffdeae",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#ffdbcc",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#fffbff",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#9d430c",
+                        "secondary-container": "#83c0ff",
+                        "tertiary-container": "#9b6b04",
+                        "outline-variant": "#ddc1b5",
+                        "background": "#fcf9f3",
+                        "tertiary": "#7c5400",
+                        "on-tertiary-container": "#fffbff",
+                        "surface-container-high": "#ebe8e2",
+                        "on-secondary-container": "#004e80",
+                        "inverse-primary": "#ffb694",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e5e2dc",
+                        "surface-dim": "#dcdad4",
+                        "inverse-on-surface": "#f3f0ea",
+                        "secondary": "#13629b",
+                        "on-surface-variant": "#56423a",
+                        "on-secondary-fixed": "#001d34"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "sm": "8px",
+                        "unit": "4px",
+                        "margin-mobile": "16px",
+                        "lg": "24px",
+                        "container-max": "1200px",
+                        "xs": "4px",
+                        "gutter": "24px",
+                        "xl": "40px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Libre Caslon Text"],
+                        "headline-lg": ["Libre Caslon Text"],
+                        "body-md": ["Be Vietnam Pro"],
+                        "label-sm": ["Work Sans"],
+                        "body-lg": ["Be Vietnam Pro"],
+                        "headline-md": ["Libre Caslon Text"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .fill-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased pt-20">
+<!-- TopNavBar Component -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-lg h-20 bg-surface-bright/90 backdrop-blur-md border-b border-outline-variant">
+<div class="flex items-center gap-md">
+<span class="font-display-lg text-headline-md tracking-tight text-primary">Vernatun</span>
+</div>
+<div class="hidden md:flex items-center gap-lg">
+<a class="text-on-surface-variant hover:text-primary transition-colors text-body-md font-body-md" href="#logo">Logo</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-body-md font-body-md" href="#colors">Colors</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-body-md font-body-md" href="#typography">Typography</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-body-md font-body-md" href="#imagery">Imagery</a>
+</div>
+<div>
+<button class="bg-primary text-on-primary px-lg py-sm rounded-lg hover:bg-primary-container transition-all font-label-sm uppercase tracking-wider">Download Brandbook</button>
+</div>
+</nav>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-gutter py-xl">
+<!-- Hero Section -->
+<section class="mb-xl md:mb-[80px] text-center pt-xl">
+<h1 class="font-display-lg text-display-lg text-primary mb-md">Vernatun Brand Identity</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto">
+                A space of intellectual gathering, warmth, and cultural preservation. The Vernatun Armenian Club connects individuals through conversation, heritage, and community, bridged by a modern yet tactile aesthetic.
+            </p>
+</section>
+<!-- Logo Guidelines -->
+<section class="mb-xl md:mb-[80px] scroll-mt-24" id="logo">
+<div class="border-b border-outline-variant mb-lg pb-sm">
+<h2 class="font-headline-lg text-headline-lg text-on-background">Logo Guidelines</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg items-center">
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant flex justify-center shadow-sm">
+<img alt="Vernatun Logo" class="max-w-full h-auto object-contain rounded-lg" src="https://lh3.googleusercontent.com/aida/ADBb0uhk3FLoNjek78N8kTt2N2Zdxqbw-nGahP7nPXVIhJ5w97tEY4mjkqORU-gp_xTQdo_5D-T2v9TuZuIVLeIqoVCsyfP-f_lRVttRQYX_fcsPJ5OF8smSDaz3sLQK3aUIDkCJucIHC7f7UcrmuPEiYCea4nZNJZUm2OCMoQKA2Rc2gxwzLCmGsza-LaiwfLrdHztIzv_bKEDHTGSyG45i5-tAuv0AqqgkGSvFbvCaJyWnYB68qIrP3MtWd5qdTjhb8E2hcG8QTLCkRg"/>
+</div>
+<div class="space-y-md">
+<h3 class="font-headline-md text-headline-md text-primary">The Symbolism</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        The Vernatun logo is the cornerstone of our visual identity. It features the sun rising over the majestic Mount Ararat, a profound symbol of enlightenment, endurance, and Armenian heritage. 
+                    </p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        The circular emblem represents unity and the gathering space of the "Upper Room." The typography below provides a strong, corporate yet approachable foundation, balancing the rich iconography above.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Color Palette -->
+<section class="mb-xl md:mb-[80px] scroll-mt-24" id="colors">
+<div class="border-b border-outline-variant mb-lg pb-sm">
+<h2 class="font-headline-lg text-headline-lg text-on-background">Color Palette</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg max-w-3xl">
+                Derived from the Armenian highlands, our palette utilizes organic textures and earthy tones to evoke warmth and history, contrasted with deep, scholarly hues for structure.
+            </p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-md">
+<!-- Primary Terracotta -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm flex flex-col">
+<div class="h-32 bg-primary w-full"></div>
+<div class="p-sm md:p-md flex-grow flex flex-col justify-between bg-surface-container-lowest">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-xs">Primary</span>
+<div class="flex justify-between items-end">
+<span class="font-headline-md text-body-lg text-primary">Terracotta</span>
+<span class="font-label-sm text-xs text-outline">#9a4109</span>
+</div>
+</div>
+</div>
+<!-- Sun Gold -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm flex flex-col">
+<div class="h-32 bg-tertiary-fixed-dim w-full"></div>
+<div class="p-sm md:p-md flex-grow flex flex-col justify-between bg-surface-container-lowest">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-xs">Accent</span>
+<div class="flex justify-between items-end">
+<span class="font-headline-md text-body-lg text-tertiary">Sun Gold</span>
+<span class="font-label-sm text-xs text-outline">#f8bc58</span>
+</div>
+</div>
+</div>
+<!-- Deep Azure -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm flex flex-col">
+<div class="h-32 bg-secondary w-full"></div>
+<div class="p-sm md:p-md flex-grow flex flex-col justify-between bg-surface-container-lowest">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-xs">Secondary</span>
+<div class="flex justify-between items-end">
+<span class="font-headline-md text-body-lg text-secondary">Deep Azure</span>
+<span class="font-label-sm text-xs text-outline">#13629b</span>
+</div>
+</div>
+</div>
+<!-- Parchment -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm flex flex-col">
+<div class="h-32 bg-surface-container-low w-full border-b border-outline-variant"></div>
+<div class="p-sm md:p-md flex-grow flex flex-col justify-between bg-surface-container-lowest">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-xs">Background</span>
+<div class="flex justify-between items-end">
+<span class="font-headline-md text-body-lg text-on-surface-variant">Parchment</span>
+<span class="font-label-sm text-xs text-outline">#f6f3ed</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Typography -->
+<section class="mb-xl md:mb-[80px] scroll-mt-24" id="typography">
+<div class="border-b border-outline-variant mb-lg pb-sm">
+<h2 class="font-headline-lg text-headline-lg text-on-background">Typography</h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-lg">
+<!-- Serif -->
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-sm">
+<div class="flex justify-between items-start mb-md">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary">Libre Caslon Text</h3>
+<span class="font-label-sm text-label-sm text-outline uppercase">Primary Headings</span>
+</div>
+<span class="font-display-lg text-display-lg text-outline-variant opacity-50">Aa</span>
+</div>
+<div class="space-y-sm">
+<div class="pb-sm border-b border-outline-variant/50">
+<span class="font-display-lg text-display-lg text-on-background block">Display Large</span>
+</div>
+<div class="pb-sm border-b border-outline-variant/50">
+<span class="font-headline-lg text-headline-lg text-on-background block">Headline Large</span>
+</div>
+<div class="pb-sm border-b border-outline-variant/50">
+<span class="font-headline-md text-headline-md text-on-background block">Headline Medium</span>
+</div>
+</div>
+</div>
+<!-- Sans Serif -->
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-sm">
+<div class="flex justify-between items-start mb-md">
+<div>
+<h3 class="font-headline-md text-headline-md text-secondary">Be Vietnam Pro</h3>
+<span class="font-label-sm text-label-sm text-outline uppercase">Body &amp; UI</span>
+</div>
+<span class="font-body-md text-display-lg text-outline-variant opacity-50 font-bold">Aa</span>
+</div>
+<div class="space-y-sm">
+<div class="pb-sm border-b border-outline-variant/50">
+<span class="font-body-lg text-body-lg text-on-background block">Body Large. Used for introductions and lead text.</span>
+</div>
+<div class="pb-sm border-b border-outline-variant/50">
+<span class="font-body-md text-body-md text-on-background block">Body Medium. Standard paragraph text for general reading.</span>
+</div>
+<div class="pb-sm border-b border-outline-variant/50">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase block">Label Small. UI Elements &amp; Metadata.</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Visual Language / Imagery -->
+<section class="mb-xl md:mb-[80px] scroll-mt-24" id="imagery">
+<div class="border-b border-outline-variant mb-lg pb-sm">
+<h2 class="font-headline-lg text-headline-lg text-on-background">Visual Language &amp; Layout</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg max-w-3xl">
+                Our visual materials blend historical reference with modern structural clarity. We use parchment textures, elegant borders, and clean typographic hierarchies for educational and promotional content.
+            </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div class="bg-surface-container-lowest p-sm rounded-xl border border-outline-variant shadow-sm flex justify-center">
+<img alt="Vernatun Social Media Template Example" class="max-w-full h-auto object-contain rounded-lg" src="https://lh3.googleusercontent.com/aida/ADBb0uiTp0U03QxWQcY1PeOgruPGzQI673H5i_62XywDUdh-BxKc_q7gvd5rGrJNiBzx8nvOKIPP12ZUbxXLQaF18c_mwWUhCK9FZbiST9rCgUjwG998RquzfJirqMNUX2RwD_I1VCI2KMj90pVicvpagZnoVxgxeNTUU1HuBD_oimk8L94CA2ixNOhQI2pGsv6AOlk-reu42Q-MAXH7qrKP0HFXdaaHiF-UzeDT_f1vyEdqjhQiXMFnA6GwPW4gY1CRN54eZ5AGbsyH"/>
+</div>
+<div class="bg-surface-container-lowest p-sm rounded-xl border border-outline-variant shadow-sm flex justify-center">
+<img alt="Vernatun Schedule Layout Example" class="max-w-full h-auto object-contain rounded-lg" src="https://lh3.googleusercontent.com/aida/ADBb0uhVlS2CzufpbMBfQEbP_qZKtboKXmyWTejZjAc5UN5kf5F3G_iPDsZiy1L4TlY77nJIKdJdmBIOIednyWZ4t7tOanyq6FX7rliiAUbY9X37u6TJaebKH2yFKxH9LnsFrf7hPhiaDiSJ3nEoCvKU7958PyIkXIjdeI34_EyPpJT7773fUsqUFHPSA6RZ9ic24VFC7A2R9Xi2nyarn-OVsAbPGuUbbK5OWOftRLQTwZs-tVHUde6wQ0u6XIpj2bUkUVa7UF2Frz9TMA"/>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="w-full py-xl px-lg mt-auto flex flex-col items-center gap-md bg-surface-container-high border-t border-outline-variant">
+<div class="font-display-lg text-headline-sm text-on-surface mb-sm">Vernatun</div>
+<div class="flex flex-wrap justify-center gap-lg mb-sm">
+<a class="font-body-md text-body-md text-on-surface-variant hover:underline decoration-tertiary transition-all" href="#">History</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:underline decoration-tertiary transition-all" href="#">Contact Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:underline decoration-tertiary transition-all" href="#">Membership</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:underline decoration-tertiary transition-all" href="#">Archive</a>
+</div>
+<div class="font-body-md text-body-md text-on-surface-variant text-center opacity-80 mt-sm">
+            © 2024 Vernatun Armenian Club. Preserving Heritage, Building Community.
+        </div>
+</footer>
+</body></html>
