@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Vernatun Armenian Club — интеллектуальное сообщество в Москве: разговорный клуб, литература, история. Презентация для культурных площадок и библиотек." />
+  <title>Vernatun Armenian Club — презентация для библиотек</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.3/dist/cdn.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            parchment: '#F9F6F0',
+            terracotta: '#C95B36',
+            sungold: '#E6B25A',
+            azure: '#2A5A84',
+            ink: '#1e2930',
+            mist: '#e8e2d8',
+          },
+          fontFamily: {
+            display: ['"Libre Caslon Text"', 'Georgia', 'serif'],
+            sans: ['"Be Vietnam Pro"', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            card: '0 1px 0 rgba(42,90,132,0.06), 0 12px 40px -16px rgba(30,41,48,0.12)',
+            lift: '0 18px 50px -24px rgba(42,90,132,0.25)',
+          },
+        },
+      },
+    };
+  </script>
+  <script>
+// #region agent log
+fetch('http://127.0.0.1:7867/ingest/69397697-76cd-4a43-ab3e-c53f7c58d472',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'5a341b'},body:JSON.stringify({sessionId:'5a341b',location:'index.html:head',message:'Head parsed',data:{},timestamp:Date.now(),runId:'run3',hypothesisId:'E'})}).catch(()=>{});
+// #endregion agent log
+  </script>
+  <style>
+    body {
+      background-color: #F9F6F0;
+      color: #1e2930;
+      font-family: "Be Vietnam Pro", system-ui, sans-serif;
+    }
+    .paper-grain {
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.reveal-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .ornament {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #E6B25A, #C95B36, #E6B25A, transparent);
+    }
+  </style>
+</head>
+<body class="paper-grain min-h-screen antialiased text-ink" x-data="lightbox()" @keydown.escape.window="close()">
+    <!--
+      Видео: добавьте файл, например videos/meeting.mp4 — плеер подхватит его автоматически.
+    -->
+  <header class="sticky top-0 z-40 border-b border-mist/80 bg-parchment/90 backdrop-blur-md">
+    <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+      <a href="#top" class="flex items-center gap-3 min-w-0">
+        <img src="images/gallery-03.png" alt="Эмблема Vernatun" class="h-10 w-10 shrink-0 object-contain" width="40" height="40" />
+        <div class="min-w-0">
+          <p class="font-display text-sm sm:text-base font-bold text-azure leading-tight truncate">Vernatun Armenian Club</p>
+          <p class="text-[11px] sm:text-xs text-ink/60 truncate">Москва · разговорный клуб</p>
+        </div>
+      </a>
+      <a href="#contact" class="hidden sm:inline-flex shrink-0 items-center rounded border border-azure/20 bg-azure px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white shadow-sm transition hover:bg-azure/90">Контакты</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="relative overflow-hidden border-b border-mist">
+      <div class="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-sungold/15 blur-3xl" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute -left-20 bottom-0 h-64 w-64 rounded-full bg-terracotta/10 blur-3xl" aria-hidden="true"></div>
+      <div class="mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 sm:px-6 md:grid-cols-2 md:py-20">
+        <div class="reveal space-y-6">
+          <p class="text-xs font-semibold uppercase tracking-[0.25em] text-terracotta">Բարի գալուստ</p>
+          <h1 class="font-display text-4xl font-bold leading-tight text-azure sm:text-5xl lg:text-[3.25rem]">
+            Vernatun Armenian Club
+          </h1>
+          <p class="text-lg leading-relaxed text-ink/80 sm:text-xl">
+            Уютное сообщество: пространство для живого общения на армянском языке, новых знакомств и приятного отдыха в теплой компании.
+          </p>
+          <div class="ornament max-w-md" aria-hidden="true"></div>
+          <div class="flex flex-wrap gap-3">
+            <a href="#contact" class="inline-flex items-center justify-center rounded bg-terracotta px-5 py-3 text-sm font-semibold text-white shadow-card transition hover:bg-terracotta/90">
+              Присоединиться
+            </a>
+            <a href="#libraries" class="inline-flex items-center justify-center rounded border border-azure/25 bg-white/60 px-5 py-3 text-sm font-semibold text-azure backdrop-blur-sm transition hover:border-azure/50">
+              О клубе
+            </a>
+          </div>
+        </div>
+        <div class="reveal flex justify-center md:justify-end">
+          <div class="relative w-full max-w-md">
+            <div class="absolute -inset-0 rounded-2xl border border-sungold/40 bg-gradient-to-br from-white/70 to-parchment shadow-lift" aria-hidden="true"></div>
+            <div class="relative overflow-hidden rounded-xl border border-azure/15 bg-white shadow-card flex items-center justify-center p-0">
+              <img src="images/gallery-03.png" alt="Vernatun — монограмма" class="w-full h-auto object-cover" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- О клубе -->
+    <section id="libraries" class="border-b border-mist bg-white/40 py-16 sm:py-20">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="reveal mx-auto max-w-3xl text-center">
+          <h2 class="font-display text-3xl font-bold text-azure sm:text-4xl">О нашем клубе</h2>
+          <p class="mt-4 text-lg leading-relaxed text-ink/75">
+            Vernatun — это уютное пространство для общения, где мы встречаемся, чтобы поговорить на родном языке, обсудить актуальные темы, поиграть в настольные игры и просто приятно провести время в хорошей компании.
+          </p>
+          <p class="mt-4 text-lg leading-relaxed text-ink/75">
+            Мы создаем теплую и дружескую атмосферу, где каждый может найти новых друзей, попрактиковать армянский язык и отдохнуть от городской суеты.
+          </p>
+        </div>
+        <div class="mt-12 grid gap-6 sm:grid-cols-3">
+          <article class="reveal rounded-lg border border-azure/12 bg-parchment/80 p-6 shadow-card">
+            <p class="text-xs font-bold uppercase tracking-widest text-terracotta">Атмосфера</p>
+            <h3 class="mt-2 font-display text-xl text-azure">Дружеская среда</h3>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">Открытое общение, новые знакомства и взаимная поддержка в неформальной обстановке.</p>
+          </article>
+          <article class="reveal rounded-lg border border-azure/12 bg-parchment/80 p-6 shadow-card">
+            <p class="text-xs font-bold uppercase tracking-widest text-terracotta">Практика</p>
+            <h3 class="mt-2 font-display text-xl text-azure">Живой язык</h3>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">Разговорная практика на армянском языке для любого уровня владения.</p>
+          </article>
+          <article class="reveal rounded-lg border border-azure/12 bg-parchment/80 p-6 shadow-card">
+            <p class="text-xs font-bold uppercase tracking-widest text-terracotta">Досуг</p>
+            <h3 class="mt-2 font-display text-xl text-azure">Игры и отдых</h3>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">Увлекательные настольные игры, кофе и отличное настроение в компании единомышленников.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Форматы -->
+    <section class="py-16 sm:py-20">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="reveal text-center">
+          <h2 class="font-display text-3xl font-bold text-azure sm:text-4xl">Форматы встреч</h2>
+          <p class="mx-auto mt-3 max-w-2xl text-ink/70">Три опоры клуба — в каждой есть место для приятного общения.</p>
+        </div>
+        <div class="mt-12 grid gap-8 md:grid-cols-3">
+          <article class="reveal flex flex-col rounded-lg border border-azure/15 bg-white/70 shadow-card backdrop-blur-sm overflow-hidden">
+            <div class="p-7 flex-1 flex flex-col">
+              <div class="h-px w-12 bg-sungold" aria-hidden="true"></div>
+              <h3 class="mt-5 font-display text-2xl text-azure">Разговорные встречи</h3>
+              <p class="mt-3 flex-1 text-sm leading-relaxed text-ink/75">Живой язык и культура речи: обсуждаем интересные темы, делимся новостями и просто общаемся в теплой компании без давления и формальностей.</p>
+              <p class="mt-4 text-xs font-semibold uppercase tracking-wider text-terracotta">Диалог</p>
+            </div>
+            <img src="images/format-01.png" alt="Разговорные встречи" class="w-full h-48 object-cover border-t border-azure/10" loading="lazy" />
+          </article>
+          <article class="reveal flex flex-col rounded-lg border border-azure/15 bg-white/70 shadow-card backdrop-blur-sm overflow-hidden">
+            <div class="p-7 flex-1 flex flex-col">
+              <div class="h-px w-12 bg-sungold" aria-hidden="true"></div>
+              <h3 class="mt-5 font-display text-2xl text-azure">Настольные игры</h3>
+              <p class="mt-3 flex-1 text-sm leading-relaxed text-ink/75">Играем в популярные настолки, смеемся и отлично проводим время. Отличный способ расслабиться, проявить смекалку и завести новых друзей.</p>
+              <p class="mt-4 text-xs font-semibold uppercase tracking-wider text-terracotta">Игры</p>
+            </div>
+            <img src="images/format-02.png" alt="Настольные игры" class="w-full h-48 object-cover border-t border-azure/10" loading="lazy" />
+          </article>
+          <article class="reveal flex flex-col rounded-lg border border-azure/15 bg-white/70 shadow-card backdrop-blur-sm overflow-hidden">
+            <div class="p-7 flex-1 flex flex-col">
+              <div class="h-px w-12 bg-sungold" aria-hidden="true"></div>
+              <h3 class="mt-5 font-display text-2xl text-azure">Неформальное общение</h3>
+              <p class="mt-3 flex-1 text-sm leading-relaxed text-ink/75">Встречи за чашкой кофе, где главное — это люди. Никаких лекций и сложных форматов, только живой диалог и приятная атмосфера.</p>
+              <p class="mt-4 text-xs font-semibold uppercase tracking-wider text-terracotta">Отдых</p>
+            </div>
+            <img src="images/format-03.png" alt="Неформальное общение" class="w-full h-48 object-cover border-t border-azure/10" loading="lazy" />
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Медиа -->
+    <section class="border-y border-mist bg-white/35 py-16 sm:py-20">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="reveal flex flex-col gap-3 text-center sm:text-left">
+          <h2 class="font-display text-3xl font-bold text-azure sm:text-4xl">Атмосфера клуба</h2>
+          <p class="mx-auto max-w-2xl text-ink/70 sm:mx-0">Фрагменты визуального стиля и материалы со встреч. Нажмите на фото — откроется крупный просмотр.</p>
+        </div>
+
+        <div class="reveal mt-10" x-data="{ current: 0, count: 4 }" x-init="setInterval(() => { current = current === count - 1 ? 0 : current + 1 }, 5000)">
+          <div class="relative w-full max-w-5xl mx-auto overflow-hidden rounded-xl shadow-card border border-azure/12 group bg-parchment">
+            <!-- Слайды: файлы из папки gallery/ (1.jpg … 4.jpg) -->
+            <div class="flex transition-transform duration-500 ease-out" :style="`transform: translateX(-${current * 100}%)`">
+              <div class="w-full flex-shrink-0 relative">
+                <img src="gallery/1.jpg" alt="Атмосфера клуба 1" class="w-full h-auto object-contain cursor-pointer" @click="openLb('gallery/1.jpg', 'Атмосфера клуба')" loading="lazy" />
+              </div>
+              <div class="w-full flex-shrink-0 relative">
+                <img src="gallery/2.jpg" alt="Атмосфера клуба 2" class="w-full h-auto object-contain cursor-pointer" @click="openLb('gallery/2.jpg', 'Атмосфера клуба')" loading="lazy" />
+              </div>
+              <div class="w-full flex-shrink-0 relative">
+                <img src="gallery/3.jpg" alt="Атмосфера клуба 3" class="w-full h-auto object-contain cursor-pointer" @click="openLb('gallery/3.jpg', 'Атмосфера клуба')" loading="lazy" />
+              </div>
+              <div class="w-full flex-shrink-0 relative">
+                <img src="gallery/4.jpg" alt="Атмосфера клуба 4" class="w-full h-auto object-contain cursor-pointer" @click="openLb('gallery/4.jpg', 'Атмосфера клуба')" loading="lazy" />
+              </div>
+            </div>
+
+            <!-- Кнопки управления -->
+            <button type="button" @click="current = current === 0 ? count - 1 : current - 1" class="absolute left-4 top-1/2 -translate-y-1/2 bg-ink/40 hover:bg-ink/70 text-white rounded-full p-2 backdrop-blur-md transition opacity-0 group-hover:opacity-100 focus:opacity-100" aria-label="Предыдущее фото">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            </button>
+            <button type="button" @click="current = current === count - 1 ? 0 : current + 1" class="absolute right-4 top-1/2 -translate-y-1/2 bg-ink/40 hover:bg-ink/70 text-white rounded-full p-2 backdrop-blur-md transition opacity-0 group-hover:opacity-100 focus:opacity-100" aria-label="Следующее фото">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+
+            <!-- Индикаторы (точки) -->
+            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+              <button type="button" @click="current = 0" :class="current === 0 ? 'bg-sungold w-6' : 'bg-white/60 hover:bg-white w-2'" class="h-2 rounded-full transition-all duration-300" aria-label="Фото 1"></button>
+              <button type="button" @click="current = 1" :class="current === 1 ? 'bg-sungold w-6' : 'bg-white/60 hover:bg-white w-2'" class="h-2 rounded-full transition-all duration-300" aria-label="Фото 2"></button>
+              <button type="button" @click="current = 2" :class="current === 2 ? 'bg-sungold w-6' : 'bg-white/60 hover:bg-white w-2'" class="h-2 rounded-full transition-all duration-300" aria-label="Фото 3"></button>
+              <button type="button" @click="current = 3" :class="current === 3 ? 'bg-sungold w-6' : 'bg-white/60 hover:bg-white w-2'" class="h-2 rounded-full transition-all duration-300" aria-label="Фото 4"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Расписание -->
+    <section class="py-16 sm:py-20">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="reveal text-center sm:text-left">
+          <h2 class="font-display text-3xl font-bold text-azure sm:text-4xl">Ближайшие встречи</h2>
+          <p class="mt-2 text-ink/70">Ориентировочный календарь — следите за анонсами в наших соцсетях.</p>
+        </div>
+
+        <div class="mt-10 overflow-hidden rounded-xl border border-azure/12 bg-white/70 shadow-card backdrop-blur-sm p-4 text-center">
+          <img src="images/poster.png" alt="Расписание встреч" class="w-full max-w-3xl mx-auto h-auto rounded-lg cursor-pointer hover:opacity-95 transition-opacity" @click="openLb('images/poster.png', 'Расписание встреч')" loading="lazy" />
+          <p class="mt-4 text-sm text-ink/60">Нажмите на постер, чтобы увеличить</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Контакты -->
+    <footer id="contact" class="border-t border-mist bg-azure text-white">
+      <div class="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+        <div class="reveal flex flex-col items-center text-center">
+          <h2 class="font-display text-3xl font-bold">Присоединяйтесь к нам</h2>
+          <p class="mt-4 max-w-xl text-sm leading-relaxed text-white/80">
+            Подписывайтесь на наши социальные сети, чтобы не пропустить анонсы новых встреч и мероприятий.
+          </p>
+          <div class="mt-8 rounded-lg border border-white/15 bg-white/5 p-6 backdrop-blur-sm w-full max-w-md">
+            <p class="text-xs font-bold uppercase tracking-widest text-sungold">Наши соцсети</p>
+            <ul class="mt-4 flex flex-col sm:flex-row items-center justify-center gap-6 text-sm">
+              <li><a class="text-white/90 underline decoration-sungold/60 underline-offset-4 hover:text-white transition-colors" href="https://t.me/+n7clld6EXN9kYjUy" target="_blank" rel="noopener noreferrer" aria-label="Telegram чат">Telegram — чат клуба</a></li>
+              <li><a class="text-white/90 underline decoration-sungold/60 underline-offset-4 hover:text-white transition-colors" href="https://t.me/MASClubb" target="_blank" rel="noopener noreferrer" aria-label="Telegram канал">Telegram — канал клуба</a></li>
+            </ul>
+          </div>
+        </div>
+        <p class="mt-12 text-center text-[11px] text-white/45">© Vernatun Armenian Club</p>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Lightbox -->
+  <div
+    x-show="active"
+    x-transition.opacity.duration.200ms
+    class="fixed inset-0 z-[60] flex items-center justify-center bg-ink/80 p-4 backdrop-blur-sm"
+    style="display: none;"
+    @click.self="close()"
+    role="dialog"
+    aria-modal="true"
+    :aria-label="caption || 'Просмотр изображения'"
+  >
+    <button type="button" class="absolute right-4 top-4 rounded-full border border-white/30 bg-white/10 p-2 text-white transition hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-sungold" @click="close()" aria-label="Закрыть">
+      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <figure class="max-h-[90vh] max-w-5xl">
+      <img :src="src" :alt="caption" class="max-h-[80vh] w-auto max-w-full rounded-md border border-white/10 shadow-lift object-contain" width="1200" height="800" />
+      <figcaption class="mt-3 text-center text-sm text-white/80" x-text="caption"></figcaption>
+    </figure>
+  </div>
+
+  <script>
+// #region agent log
+fetch('http://127.0.0.1:7867/ingest/69397697-76cd-4a43-ab3e-c53f7c58d472',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'5a341b'},body:JSON.stringify({sessionId:'5a341b',location:'index.html:body_end',message:'Body end script started',data:{},timestamp:Date.now(),runId:'run3',hypothesisId:'E'})}).catch(()=>{});
+// #endregion agent log
+// #region agent log
+window.addEventListener('error', function(e) {
+  fetch('http://127.0.0.1:7867/ingest/69397697-76cd-4a43-ab3e-c53f7c58d472',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'5a341b'},body:JSON.stringify({sessionId:'5a341b',location:'index.html:onerror',message:'Global error caught',data:{msg:e.message, line:e.lineno},timestamp:Date.now(),runId:'run2',hypothesisId:'A'})}).catch(()=>{});
+});
+// #endregion agent log
+  </script>
+  <script>
+// #region agent log
+fetch('http://127.0.0.1:7867/ingest/69397697-76cd-4a43-ab3e-c53f7c58d472',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'5a341b'},body:JSON.stringify({sessionId:'5a341b',location:'index.html:script_start',message:'Main script started',data:{},timestamp:Date.now(),runId:'run2',hypothesisId:'A'})}).catch(()=>{});
+// #endregion agent log
+    /** Показать PNG-логотип, если файл существует (иначе остаётся SVG). */
+    (function () {
+// #region agent log
+fetch('http://127.0.0.1:7867/ingest/69397697-76cd-4a43-ab3e-c53f7c58d472',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'5a341b'},body:JSON.stringify({sessionId:'5a341b',location:'index.html:logo_script',message:'Logo script started',data:{},timestamp:Date.now(),runId:'run2',hypothesisId:'D'})}).catch(()=>{});
+// #endregion agent log
+      const img = new Image();
+      img.onload = function () {
+        document.querySelectorAll('#logo-png, #hero-logo-png').forEach(function (el) {
+          el.classList.remove('hidden');
+        });
+        document.querySelectorAll('img[src="images/logo.svg"]').forEach(function (el) {
+          if (el.closest('#top')) el.classList.add('hidden');
+        });
+        document.querySelector('header img[src="images/logo.svg"]')?.classList.add('hidden');
+      };
+      img.onerror = function () {};
+      img.src = 'images/logo.png?' + Date.now();
+    })();
+
+    document.addEventListener('alpine:init', function () {
+// #region agent log
+fetch('http://127.0.0.1:7867/ingest/69397697-76cd-4a43-ab3e-c53f7c58d472',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'5a341b'},body:JSON.stringify({sessionId:'5a341b',location:'index.html:alpine_init',message:'Alpine init triggered',data:{},timestamp:Date.now(),runId:'run2',hypothesisId:'B'})}).catch(()=>{});
+// #endregion agent log
+      Alpine.data('lightbox', function () {
+        return {
+          active: false,
+          src: '',
+          caption: '',
+          openLb: function (src, caption) {
+            this.src = src;
+            this.caption = caption || '';
+            this.active = true;
+            document.body.style.overflow = 'hidden';
+          },
+          close: function () {
+            this.active = false;
+            this.src = '';
+            this.caption = '';
+            document.body.style.overflow = '';
+          },
+        };
+      });
+    });
+
+    /** Scroll reveal */
+    (function () {
+// #region agent log
+fetch('http://127.0.0.1:7867/ingest/69397697-76cd-4a43-ab3e-c53f7c58d472',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'5a341b'},body:JSON.stringify({sessionId:'5a341b',location:'index.html:scroll_reveal',message:'Scroll reveal initialized',data:{},timestamp:Date.now(),runId:'post-fix',hypothesisId:'C'})}).catch(()=>{});
+// #endregion agent log
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) {
+        els.forEach(function (el) { el.classList.add('reveal-visible'); });
+        return;
+      }
+      var io = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (en) {
+            if (en.isIntersecting) {
+              en.target.classList.add('reveal-visible');
+              io.unobserve(en.target);
+            }
+          });
+        },
+        { rootMargin: '0px 0px -8% 0px', threshold: 0.08 }
+      );
+      els.forEach(function (el) { io.observe(el); });
+    })();
+  </script>
+  <style>[x-cloak]{display:none!important}</style>
+</body>
+</html>
