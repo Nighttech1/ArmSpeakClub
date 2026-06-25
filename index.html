@@ -62,6 +62,22 @@ fetch('http://127.0.0.1:7867/ingest/69397697-76cd-4a43-ab3e-c53f7c58d472',{metho
       height: 1px;
       background: linear-gradient(90deg, transparent, #E6B25A, #C95B36, #E6B25A, transparent);
     }
+    .carousel-nav-btn {
+      opacity: 0;
+      transition: opacity 0.2s ease, background-color 0.2s ease;
+    }
+    .carousel-nav-btn:hover,
+    .carousel-nav-btn:focus-visible {
+      opacity: 1;
+    }
+    .cal-cell {
+      min-height: 6.5rem;
+    }
+    @media (min-width: 640px) {
+      .cal-cell {
+        min-height: 7.5rem;
+      }
+    }
   </style>
 </head>
 <body class="paper-grain min-h-screen antialiased text-ink" x-data="lightbox()" @keydown.escape.window="close()">
@@ -153,9 +169,9 @@ fetch('http://127.0.0.1:7867/ingest/69397697-76cd-4a43-ab3e-c53f7c58d472',{metho
       <div class="mx-auto max-w-6xl px-4 sm:px-6">
         <div class="reveal text-center">
           <h2 class="font-display text-3xl font-bold text-azure sm:text-4xl">Форматы встреч</h2>
-          <p class="mx-auto mt-3 max-w-2xl text-ink/70">Три опоры клуба — в каждой есть место для приятного общения.</p>
+          <p class="mx-auto mt-3 max-w-2xl text-ink/70">Четыре формата клуба — в каждом есть место для приятного общения.</p>
         </div>
-        <div class="mt-12 grid gap-8 md:grid-cols-3">
+        <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <article class="reveal flex flex-col rounded-lg border border-azure/15 bg-white/70 shadow-card backdrop-blur-sm overflow-hidden">
             <div class="p-7 flex-1 flex flex-col">
               <div class="h-px w-12 bg-sungold" aria-hidden="true"></div>
@@ -172,7 +188,7 @@ fetch('http://127.0.0.1:7867/ingest/69397697-76cd-4a43-ab3e-c53f7c58d472',{metho
               <p class="mt-3 flex-1 text-sm leading-relaxed text-ink/75">Играем в популярные настолки, смеемся и отлично проводим время. Отличный способ расслабиться, проявить смекалку и завести новых друзей.</p>
               <p class="mt-4 text-xs font-semibold uppercase tracking-wider text-terracotta">Игры</p>
             </div>
-            <img src="images/format-02.png" alt="Настольные игры" class="w-full h-48 object-cover border-t border-azure/10" loading="lazy" />
+            <img src="images/format-02.jpg" alt="Настольные игры" class="w-full h-48 object-cover border-t border-azure/10" loading="lazy" />
           </article>
           <article class="reveal flex flex-col rounded-lg border border-azure/15 bg-white/70 shadow-card backdrop-blur-sm overflow-hidden">
             <div class="p-7 flex-1 flex flex-col">
@@ -182,6 +198,15 @@ fetch('http://127.0.0.1:7867/ingest/69397697-76cd-4a43-ab3e-c53f7c58d472',{metho
               <p class="mt-4 text-xs font-semibold uppercase tracking-wider text-terracotta">Отдых</p>
             </div>
             <img src="images/format-03.png" alt="Неформальное общение" class="w-full h-48 object-cover border-t border-azure/10" loading="lazy" />
+          </article>
+          <article class="reveal flex flex-col rounded-lg border border-azure/15 bg-white/70 shadow-card backdrop-blur-sm overflow-hidden">
+            <div class="p-7 flex-1 flex flex-col">
+              <div class="h-px w-12 bg-sungold" aria-hidden="true"></div>
+              <h3 class="mt-5 font-display text-2xl text-azure">Спортивные мероприятия</h3>
+              <p class="mt-3 flex-1 text-sm leading-relaxed text-ink/75">Иногда собираемся на волейбол — активный отдых, движение и командный дух вне стен клуба. Присоединяйтесь, когда анонсируем игру в чате.</p>
+              <p class="mt-4 text-xs font-semibold uppercase tracking-wider text-terracotta">Спорт</p>
+            </div>
+            <img src="images/format-04.jpg" alt="Спортивные мероприятия — волейбол" class="w-full h-48 object-cover border-t border-azure/10" loading="lazy" />
           </article>
         </div>
       </div>
@@ -213,11 +238,11 @@ fetch('http://127.0.0.1:7867/ingest/69397697-76cd-4a43-ab3e-c53f7c58d472',{metho
               </div>
             </div>
 
-            <!-- Кнопки управления -->
-            <button type="button" @click="current = current === 0 ? count - 1 : current - 1" class="absolute left-4 top-1/2 -translate-y-1/2 bg-ink/40 hover:bg-ink/70 text-white rounded-full p-2 backdrop-blur-md transition opacity-0 group-hover:opacity-100 focus:opacity-100" aria-label="Предыдущее фото">
+            <!-- Кнопки управления: видны только при наведении на саму кнопку -->
+            <button type="button" @click="current = current === 0 ? count - 1 : current - 1" class="carousel-nav-btn absolute left-4 top-1/2 -translate-y-1/2 bg-ink/40 hover:bg-ink/70 text-white rounded-full p-2 backdrop-blur-md focus:outline-none focus-visible:ring-2 focus-visible:ring-sungold" aria-label="Предыдущее фото">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
             </button>
-            <button type="button" @click="current = current === count - 1 ? 0 : current + 1" class="absolute right-4 top-1/2 -translate-y-1/2 bg-ink/40 hover:bg-ink/70 text-white rounded-full p-2 backdrop-blur-md transition opacity-0 group-hover:opacity-100 focus:opacity-100" aria-label="Следующее фото">
+            <button type="button" @click="current = current === count - 1 ? 0 : current + 1" class="carousel-nav-btn absolute right-4 top-1/2 -translate-y-1/2 bg-ink/40 hover:bg-ink/70 text-white rounded-full p-2 backdrop-blur-md focus:outline-none focus-visible:ring-2 focus-visible:ring-sungold" aria-label="Следующее фото">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
             </button>
 
@@ -241,9 +266,74 @@ fetch('http://127.0.0.1:7867/ingest/69397697-76cd-4a43-ab3e-c53f7c58d472',{metho
           <p class="mt-2 text-ink/70">Ориентировочный календарь — следите за анонсами в наших соцсетях.</p>
         </div>
 
-        <div class="mt-10 overflow-hidden rounded-xl border border-azure/12 bg-white/70 shadow-card backdrop-blur-sm p-4 text-center">
-          <img src="images/poster.png" alt="Расписание встреч" class="w-full max-w-3xl mx-auto h-auto rounded-lg cursor-pointer hover:opacity-95 transition-opacity" @click="openLb('images/poster.png', 'Расписание встреч')" loading="lazy" />
-          <p class="mt-4 text-sm text-ink/60">Нажмите на постер, чтобы увеличить</p>
+        <div class="reveal mt-10 overflow-hidden rounded-xl border border-azure/12 bg-white shadow-card" x-data="clubCalendar()" x-cloak>
+          <!-- Шапка календаря -->
+          <div class="flex flex-wrap items-center justify-between gap-3 border-b border-mist bg-parchment/60 px-4 py-3 sm:px-6">
+            <div class="flex items-center gap-2">
+              <button type="button" @click="prevMonth()" class="rounded-full p-2 text-azure transition hover:bg-azure/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-sungold" aria-label="Предыдущий месяц">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+              </button>
+              <button type="button" @click="nextMonth()" class="rounded-full p-2 text-azure transition hover:bg-azure/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-sungold" aria-label="Следующий месяц">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </button>
+              <h3 class="font-display text-xl font-bold text-azure sm:text-2xl" x-text="title"></h3>
+            </div>
+            <button type="button" @click="goToday()" class="rounded border border-azure/20 bg-white px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-azure transition hover:border-azure/40 hover:bg-azure/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-sungold">
+              Сегодня
+            </button>
+          </div>
+
+          <!-- Дни недели -->
+          <div class="grid grid-cols-7 border-b border-mist bg-white/80 text-center text-[11px] font-semibold uppercase tracking-wider text-ink/50 sm:text-xs">
+            <template x-for="day in weekDays" :key="day">
+              <div class="border-r border-mist/80 py-2 last:border-r-0" x-text="day"></div>
+            </template>
+          </div>
+
+          <!-- Сетка месяца -->
+          <div class="grid grid-cols-7 bg-mist/40">
+            <template x-for="(week, wi) in weeks" :key="wi">
+              <template x-for="(cell, di) in week" :key="wi + '-' + di">
+                <div
+                  class="cal-cell border-b border-r border-mist/80 bg-white p-1 sm:p-1.5 last:border-r-0"
+                  :class="cell.inMonth ? '' : 'bg-parchment/50'"
+                >
+                  <div class="flex items-center justify-between gap-1">
+                    <span
+                      class="inline-flex h-6 w-6 items-center justify-center rounded-full text-xs font-semibold sm:text-sm"
+                      :class="cell.isToday ? 'bg-azure text-white' : (cell.inMonth ? 'text-ink' : 'text-ink/35')"
+                      x-text="cell.date"
+                    ></span>
+                  </div>
+                  <div class="mt-1 space-y-0.5">
+                    <template x-for="(ev, ei) in cell.events" :key="ei">
+                      <div
+                        class="cursor-default rounded px-1 py-0.5 text-[10px] leading-tight text-white sm:text-[11px] sm:px-1.5 sm:py-1"
+                        :class="ev.color === 'azure' ? 'bg-azure' : 'bg-terracotta'"
+                        :title="ev.place + ', ' + ev.time"
+                      >
+                        <span class="font-semibold" x-text="ev.time"></span>
+                        <span class="hidden sm:inline" x-text="' · ' + ev.place"></span>
+                        <span class="sm:hidden block truncate" x-text="ev.place"></span>
+                      </div>
+                    </template>
+                  </div>
+                </div>
+              </template>
+            </template>
+          </div>
+
+          <!-- Легенда -->
+          <div class="flex flex-wrap gap-4 border-t border-mist bg-parchment/40 px-4 py-3 text-xs text-ink/70 sm:px-6">
+            <div class="flex items-center gap-2">
+              <span class="inline-block h-3 w-3 rounded bg-azure" aria-hidden="true"></span>
+              <span><strong>Вторник, 20:00</strong> — антикафе «Циферблат»</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-block h-3 w-3 rounded bg-terracotta" aria-hidden="true"></span>
+              <span><strong>Суббота, 15:00</strong> — ГЭС-2</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -342,6 +432,82 @@ fetch('http://127.0.0.1:7867/ingest/69397697-76cd-4a43-ab3e-c53f7c58d472',{metho
             this.src = '';
             this.caption = '';
             document.body.style.overflow = '';
+          },
+        };
+      });
+
+      Alpine.data('clubCalendar', function () {
+        var monthNames = [
+          'Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
+          'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь',
+        ];
+        var today = new Date();
+        return {
+          year: today.getFullYear(),
+          month: today.getMonth(),
+          monthNames: monthNames,
+          weekDays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
+          get title() {
+            return this.monthNames[this.month] + ' ' + this.year;
+          },
+          get weeks() {
+            var first = new Date(this.year, this.month, 1);
+            var start = new Date(first);
+            var mondayOffset = (first.getDay() + 6) % 7;
+            start.setDate(1 - mondayOffset);
+            var weeks = [];
+            var cursor = new Date(start);
+            for (var w = 0; w < 6; w++) {
+              var week = [];
+              for (var d = 0; d < 7; d++) {
+                var cellDate = new Date(cursor);
+                week.push({
+                  date: cellDate.getDate(),
+                  inMonth: cellDate.getMonth() === this.month,
+                  isToday: this.isToday(cellDate),
+                  events: this.getEvents(cellDate),
+                });
+                cursor.setDate(cursor.getDate() + 1);
+              }
+              weeks.push(week);
+            }
+            return weeks;
+          },
+          isToday: function (d) {
+            var t = new Date();
+            return d.getDate() === t.getDate() && d.getMonth() === t.getMonth() && d.getFullYear() === t.getFullYear();
+          },
+          getEvents: function (d) {
+            var day = d.getDay();
+            var events = [];
+            if (day === 2) {
+              events.push({ time: '20:00', place: 'Антикафе «Циферблат»', color: 'azure' });
+            }
+            if (day === 6) {
+              events.push({ time: '15:00', place: 'ГЭС-2', color: 'terracotta' });
+            }
+            return events;
+          },
+          prevMonth: function () {
+            if (this.month === 0) {
+              this.month = 11;
+              this.year -= 1;
+            } else {
+              this.month -= 1;
+            }
+          },
+          nextMonth: function () {
+            if (this.month === 11) {
+              this.month = 0;
+              this.year += 1;
+            } else {
+              this.month += 1;
+            }
+          },
+          goToday: function () {
+            var t = new Date();
+            this.year = t.getFullYear();
+            this.month = t.getMonth();
           },
         };
       });
