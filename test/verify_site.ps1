@@ -7,13 +7,17 @@ $checks = @(
     'format-photo-wrap',
     'zoom-badge',
     'gallery-slide-frame',
-    'object-position: top center',
+    'object-fit: contain',
+    '#000000',
     'images/icon.png',
     'gallery/5.jpg',
     'gallery/6.jpg',
-    'gallery/7.jpg',
     'openLb(',
     'carousel-nav-btn'
+)
+
+$mustNot = @(
+    'gallery/7.jpg'
 )
 
 $failed = 0
@@ -26,7 +30,16 @@ foreach ($pattern in $checks) {
     }
 }
 
-$galleryFiles = 1..7 | ForEach-Object { Join-Path $root "gallery\$_.jpg" }
+foreach ($pattern in $mustNot) {
+    if ($html -match [regex]::Escape($pattern)) {
+        Write-Host "FAIL: should not contain $pattern" -ForegroundColor Red
+        $failed++
+    } else {
+        Write-Host "OK: removed $pattern" -ForegroundColor Green
+    }
+}
+
+$galleryFiles = 1..6 | ForEach-Object { Join-Path $root "gallery\$_.jpg" }
 foreach ($file in $galleryFiles) {
     if (-not (Test-Path $file)) {
         Write-Host "FAIL: missing $file" -ForegroundColor Red
