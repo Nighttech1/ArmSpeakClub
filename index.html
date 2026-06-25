@@ -63,12 +63,21 @@ fetch('http://127.0.0.1:7867/ingest/69397697-76cd-4a43-ab3e-c53f7c58d472',{metho
       background: linear-gradient(90deg, transparent, #E6B25A, #C95B36, #E6B25A, transparent);
     }
     .carousel-nav-btn {
-      opacity: 0;
+      opacity: 0.55;
       transition: opacity 0.2s ease, background-color 0.2s ease;
     }
     .carousel-nav-btn:hover,
     .carousel-nav-btn:focus-visible {
       opacity: 1;
+    }
+    .format-photo-wrap {
+      cursor: pointer;
+    }
+    .format-photo-wrap:hover img {
+      filter: brightness(0.92);
+    }
+    .zoom-badge {
+      pointer-events: none;
     }
     .cal-cell {
       min-height: 6.5rem;
@@ -125,7 +134,7 @@ fetch('http://127.0.0.1:7867/ingest/69397697-76cd-4a43-ab3e-c53f7c58d472',{metho
           <div class="relative w-full max-w-md">
             <div class="absolute -inset-0 rounded-2xl border border-sungold/40 bg-gradient-to-br from-white/70 to-parchment shadow-lift" aria-hidden="true"></div>
             <div class="relative overflow-hidden rounded-xl border border-azure/15 bg-white shadow-card flex items-center justify-center p-0">
-              <img src="images/gallery-03.png" alt="Vernatun — монограмма" class="w-full h-auto object-cover" />
+              <img src="gallery/1.jpg" alt="Vernatun — встречи клуба" class="w-full h-auto max-h-80 object-cover" loading="lazy" />
             </div>
           </div>
         </div>
@@ -169,7 +178,7 @@ fetch('http://127.0.0.1:7867/ingest/69397697-76cd-4a43-ab3e-c53f7c58d472',{metho
       <div class="mx-auto max-w-6xl px-4 sm:px-6">
         <div class="reveal text-center">
           <h2 class="font-display text-3xl font-bold text-azure sm:text-4xl">Форматы встреч</h2>
-          <p class="mx-auto mt-3 max-w-2xl text-ink/70">Четыре формата клуба — в каждом есть место для приятного общения.</p>
+          <p class="mx-auto mt-3 max-w-2xl text-ink/70">Разные форматы встреч — в каждом есть место для приятного общения.</p>
         </div>
         <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <article class="reveal flex flex-col rounded-lg border border-azure/15 bg-white/70 shadow-card backdrop-blur-sm overflow-hidden">
@@ -179,7 +188,18 @@ fetch('http://127.0.0.1:7867/ingest/69397697-76cd-4a43-ab3e-c53f7c58d472',{metho
               <p class="mt-3 flex-1 text-sm leading-relaxed text-ink/75">Живой язык и культура речи: обсуждаем интересные темы, делимся новостями и просто общаемся в теплой компании без давления и формальностей.</p>
               <p class="mt-4 text-xs font-semibold uppercase tracking-wider text-terracotta">Диалог</p>
             </div>
-            <img src="images/format-01.png" alt="Разговорные встречи" class="w-full h-48 object-cover border-t border-azure/10" loading="lazy" />
+            <div
+              class="format-photo-wrap relative border-t border-azure/10"
+              role="button"
+              tabindex="0"
+              @click="openLb('images/format-01.png', 'Разговорные встречи')"
+              @keydown.enter="openLb('images/format-01.png', 'Разговорные встречи')"
+            >
+              <img src="images/format-01.png" alt="Разговорные встречи" class="w-full h-48 object-cover transition" loading="lazy" />
+              <span class="zoom-badge absolute right-2 top-2 rounded-full bg-ink/45 p-1.5 text-white backdrop-blur-sm" aria-hidden="true">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg>
+              </span>
+            </div>
           </article>
           <article class="reveal flex flex-col rounded-lg border border-azure/15 bg-white/70 shadow-card backdrop-blur-sm overflow-hidden">
             <div class="p-7 flex-1 flex flex-col">
@@ -188,7 +208,18 @@ fetch('http://127.0.0.1:7867/ingest/69397697-76cd-4a43-ab3e-c53f7c58d472',{metho
               <p class="mt-3 flex-1 text-sm leading-relaxed text-ink/75">Играем в популярные настолки, смеемся и отлично проводим время. Отличный способ расслабиться, проявить смекалку и завести новых друзей.</p>
               <p class="mt-4 text-xs font-semibold uppercase tracking-wider text-terracotta">Игры</p>
             </div>
-            <img src="images/format-02.jpg" alt="Настольные игры" class="w-full h-48 object-cover border-t border-azure/10" loading="lazy" />
+            <div
+              class="format-photo-wrap relative border-t border-azure/10"
+              role="button"
+              tabindex="0"
+              @click="openLb('images/format-02.jpg', 'Настольные игры')"
+              @keydown.enter="openLb('images/format-02.jpg', 'Настольные игры')"
+            >
+              <img src="images/format-02.jpg" alt="Настольные игры" class="w-full h-48 object-cover transition" loading="lazy" />
+              <span class="zoom-badge absolute right-2 top-2 rounded-full bg-ink/45 p-1.5 text-white backdrop-blur-sm" aria-hidden="true">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg>
+              </span>
+            </div>
           </article>
           <article class="reveal flex flex-col rounded-lg border border-azure/15 bg-white/70 shadow-card backdrop-blur-sm overflow-hidden">
             <div class="p-7 flex-1 flex flex-col">
@@ -197,7 +228,18 @@ fetch('http://127.0.0.1:7867/ingest/69397697-76cd-4a43-ab3e-c53f7c58d472',{metho
               <p class="mt-3 flex-1 text-sm leading-relaxed text-ink/75">Встречи за чашкой кофе, где главное — это люди. Никаких лекций и сложных форматов, только живой диалог и приятная атмосфера.</p>
               <p class="mt-4 text-xs font-semibold uppercase tracking-wider text-terracotta">Отдых</p>
             </div>
-            <img src="images/format-03.png" alt="Неформальное общение" class="w-full h-48 object-cover border-t border-azure/10" loading="lazy" />
+            <div
+              class="format-photo-wrap relative border-t border-azure/10"
+              role="button"
+              tabindex="0"
+              @click="openLb('images/format-03.png', 'Неформальное общение')"
+              @keydown.enter="openLb('images/format-03.png', 'Неформальное общение')"
+            >
+              <img src="images/format-03.png" alt="Неформальное общение" class="w-full h-48 object-cover transition" loading="lazy" />
+              <span class="zoom-badge absolute right-2 top-2 rounded-full bg-ink/45 p-1.5 text-white backdrop-blur-sm" aria-hidden="true">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg>
+              </span>
+            </div>
           </article>
           <article class="reveal flex flex-col rounded-lg border border-azure/15 bg-white/70 shadow-card backdrop-blur-sm overflow-hidden">
             <div class="p-7 flex-1 flex flex-col">
@@ -206,7 +248,18 @@ fetch('http://127.0.0.1:7867/ingest/69397697-76cd-4a43-ab3e-c53f7c58d472',{metho
               <p class="mt-3 flex-1 text-sm leading-relaxed text-ink/75">Иногда собираемся на волейбол — активный отдых, движение и командный дух вне стен клуба. Присоединяйтесь, когда анонсируем игру в чате.</p>
               <p class="mt-4 text-xs font-semibold uppercase tracking-wider text-terracotta">Спорт</p>
             </div>
-            <img src="images/format-04.jpg" alt="Спортивные мероприятия — волейбол" class="w-full h-48 object-cover border-t border-azure/10" loading="lazy" />
+            <div
+              class="format-photo-wrap relative border-t border-azure/10"
+              role="button"
+              tabindex="0"
+              @click="openLb('images/format-04.jpg', 'Спортивные мероприятия')"
+              @keydown.enter="openLb('images/format-04.jpg', 'Спортивные мероприятия')"
+            >
+              <img src="images/format-04.jpg" alt="Спортивные мероприятия — волейбол" class="w-full h-48 object-cover transition" loading="lazy" />
+              <span class="zoom-badge absolute right-2 top-2 rounded-full bg-ink/45 p-1.5 text-white backdrop-blur-sm" aria-hidden="true">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg>
+              </span>
+            </div>
           </article>
         </div>
       </div>
@@ -220,40 +273,60 @@ fetch('http://127.0.0.1:7867/ingest/69397697-76cd-4a43-ab3e-c53f7c58d472',{metho
           <p class="mx-auto max-w-2xl text-ink/70 sm:mx-0">Фрагменты визуального стиля и материалы со встреч. Нажмите на фото — откроется крупный просмотр.</p>
         </div>
 
-        <div class="reveal mt-10" x-data="{ current: 0, count: 4 }" x-init="setInterval(() => { current = current === count - 1 ? 0 : current + 1 }, 5000)">
-          <div class="relative w-full max-w-5xl mx-auto overflow-hidden rounded-xl shadow-card border border-azure/12 group bg-parchment">
-            <!-- Слайды: файлы из папки gallery/ (1.jpg … 4.jpg) -->
-            <div class="flex transition-transform duration-500 ease-out" :style="`transform: translateX(-${current * 100}%)`">
-              <div class="w-full flex-shrink-0 relative">
-                <img src="gallery/1.jpg" alt="Атмосфера клуба 1" class="w-full h-auto object-contain cursor-pointer" @click="openLb('gallery/1.jpg', 'Атмосфера клуба')" loading="lazy" />
-              </div>
-              <div class="w-full flex-shrink-0 relative">
-                <img src="gallery/2.jpg" alt="Атмосфера клуба 2" class="w-full h-auto object-contain cursor-pointer" @click="openLb('gallery/2.jpg', 'Атмосфера клуба')" loading="lazy" />
-              </div>
-              <div class="w-full flex-shrink-0 relative">
-                <img src="gallery/3.jpg" alt="Атмосфера клуба 3" class="w-full h-auto object-contain cursor-pointer" @click="openLb('gallery/3.jpg', 'Атмосфера клуба')" loading="lazy" />
-              </div>
-              <div class="w-full flex-shrink-0 relative">
-                <img src="gallery/4.jpg" alt="Атмосфера клуба 4" class="w-full h-auto object-contain cursor-pointer" @click="openLb('gallery/4.jpg', 'Атмосфера клуба')" loading="lazy" />
-              </div>
+        <div
+          class="reveal mt-10 flex items-center gap-2 sm:gap-4 max-w-5xl mx-auto"
+          x-data="{
+            current: 0,
+            slides: [
+              { src: 'gallery/1.jpg', caption: 'Атмосфера клуба' },
+              { src: 'gallery/2.jpg', caption: 'Атмосфера клуба' },
+              { src: 'gallery/3.jpg', caption: 'Атмосфера клуба' },
+              { src: 'gallery/4.jpg', caption: 'Атмосфера клуба' },
+              { src: 'gallery/5.jpg', caption: 'Атмосфера клуба' },
+              { src: 'gallery/6.jpg', caption: 'Атмосфера клуба' },
+              { src: 'gallery/7.jpg', caption: 'Атмосфера клуба' }
+            ],
+            get count() { return this.slides.length; },
+            prev() { this.current = this.current === 0 ? this.count - 1 : this.current - 1; },
+            next() { this.current = this.current === this.count - 1 ? 0 : this.current + 1; }
+          }"
+          x-init="setInterval(() => next(), 5000)"
+        >
+          <button type="button" @click="prev()" class="carousel-nav-btn shrink-0 rounded-full bg-azure/80 p-2 sm:p-3 text-white shadow-card backdrop-blur-md focus:outline-none focus-visible:ring-2 focus-visible:ring-sungold" aria-label="Предыдущее фото">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+          </button>
+
+          <div class="relative flex-1 min-w-0 overflow-hidden rounded-xl shadow-card border border-azure/12 bg-parchment">
+            <div class="flex transition-transform duration-500 ease-out" :style="'transform: translateX(-' + (current * 100) + '%)'">
+              <template x-for="(slide, i) in slides" :key="i">
+                <div class="w-full flex-shrink-0 relative">
+                  <img
+                    :src="slide.src"
+                    :alt="'Атмосфера клуба ' + (i + 1)"
+                    class="w-full h-auto object-contain cursor-pointer"
+                    @click="openLb(slide.src, slide.caption)"
+                    loading="lazy"
+                  />
+                </div>
+              </template>
             </div>
 
-            <!-- Кнопки управления: видны только при наведении на саму кнопку -->
-            <button type="button" @click="current = current === 0 ? count - 1 : current - 1" class="carousel-nav-btn absolute left-4 top-1/2 -translate-y-1/2 bg-ink/40 hover:bg-ink/70 text-white rounded-full p-2 backdrop-blur-md focus:outline-none focus-visible:ring-2 focus-visible:ring-sungold" aria-label="Предыдущее фото">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-            </button>
-            <button type="button" @click="current = current === count - 1 ? 0 : current + 1" class="carousel-nav-btn absolute right-4 top-1/2 -translate-y-1/2 bg-ink/40 hover:bg-ink/70 text-white rounded-full p-2 backdrop-blur-md focus:outline-none focus-visible:ring-2 focus-visible:ring-sungold" aria-label="Следующее фото">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-            </button>
-
-            <!-- Индикаторы (точки) -->
             <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-              <button type="button" @click="current = 0" :class="current === 0 ? 'bg-sungold w-6' : 'bg-white/60 hover:bg-white w-2'" class="h-2 rounded-full transition-all duration-300" aria-label="Фото 1"></button>
-              <button type="button" @click="current = 1" :class="current === 1 ? 'bg-sungold w-6' : 'bg-white/60 hover:bg-white w-2'" class="h-2 rounded-full transition-all duration-300" aria-label="Фото 2"></button>
-              <button type="button" @click="current = 2" :class="current === 2 ? 'bg-sungold w-6' : 'bg-white/60 hover:bg-white w-2'" class="h-2 rounded-full transition-all duration-300" aria-label="Фото 3"></button>
-              <button type="button" @click="current = 3" :class="current === 3 ? 'bg-sungold w-6' : 'bg-white/60 hover:bg-white w-2'" class="h-2 rounded-full transition-all duration-300" aria-label="Фото 4"></button>
+              <template x-for="(slide, i) in slides" :key="'dot-' + i">
+                <button
+                  type="button"
+                  @click="current = i"
+                  :class="current === i ? 'bg-sungold w-6' : 'bg-white/60 hover:bg-white w-2'"
+                  class="h-2 rounded-full transition-all duration-300"
+                  :aria-label="'Фото ' + (i + 1)"
+                ></button>
+              </template>
             </div>
           </div>
+
+          <button type="button" @click="next()" class="carousel-nav-btn shrink-0 rounded-full bg-azure/80 p-2 sm:p-3 text-white shadow-card backdrop-blur-md focus:outline-none focus-visible:ring-2 focus-visible:ring-sungold" aria-label="Следующее фото">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+          </button>
         </div>
       </div>
     </section>

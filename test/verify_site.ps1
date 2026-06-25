@@ -1,17 +1,16 @@
-# Vernatun static site verification (ASCII-safe patterns)
+# Vernatun static site verification
 $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
 $html = Get-Content -Raw -Encoding UTF8 -Path (Join-Path $root 'index.html')
 
 $checks = @(
-    'format-04.jpg',
-    'carousel-nav-btn',
-    'clubCalendar',
-    '20:00',
-    '15:00',
-    'prevMonth',
-    'nextMonth',
-    'goToday'
+    'format-photo-wrap',
+    'zoom-badge',
+    'gallery/5.jpg',
+    'gallery/6.jpg',
+    'gallery/7.jpg',
+    'openLb(',
+    'carousel-nav-btn'
 )
 
 $failed = 0
@@ -24,12 +23,25 @@ foreach ($pattern in $checks) {
     }
 }
 
-$format04 = Join-Path $root 'images\format-04.jpg'
-if (-not (Test-Path $format04)) {
-    Write-Host 'FAIL: images/format-04.jpg missing on disk' -ForegroundColor Red
-    $failed++
-} else {
-    Write-Host 'OK: images/format-04.jpg exists' -ForegroundColor Green
+$galleryFiles = 1..7 | ForEach-Object { Join-Path $root "gallery\$_.jpg" }
+foreach ($file in $galleryFiles) {
+    if (-not (Test-Path $file)) {
+        Write-Host "FAIL: missing $file" -ForegroundColor Red
+        $failed++
+    } else {
+        Write-Host "OK: exists $(Split-Path $file -Leaf)" -ForegroundColor Green
+    }
+}
+
+$formatFiles = @('format-01.png', 'format-02.jpg', 'format-03.png', 'format-04.jpg')
+foreach ($name in $formatFiles) {
+    $file = Join-Path $root "images\$name"
+    if (-not (Test-Path $file)) {
+        Write-Host "FAIL: missing images/$name" -ForegroundColor Red
+        $failed++
+    } else {
+        Write-Host "OK: images/$name" -ForegroundColor Green
+    }
 }
 
 if ($failed -gt 0) {
