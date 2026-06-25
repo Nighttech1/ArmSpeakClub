@@ -79,6 +79,18 @@ fetch('http://127.0.0.1:7867/ingest/69397697-76cd-4a43-ab3e-c53f7c58d472',{metho
     .zoom-badge {
       pointer-events: none;
     }
+    .gallery-slide-frame {
+      aspect-ratio: 4 / 3;
+      width: 100%;
+      overflow: hidden;
+      background-color: #F9F6F0;
+    }
+    .gallery-slide-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
     .cal-cell {
       min-height: 6.5rem;
     }
@@ -96,7 +108,7 @@ fetch('http://127.0.0.1:7867/ingest/69397697-76cd-4a43-ab3e-c53f7c58d472',{metho
   <header class="sticky top-0 z-40 border-b border-mist/80 bg-parchment/90 backdrop-blur-md">
     <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
       <a href="#top" class="flex items-center gap-3 min-w-0">
-        <img src="images/gallery-03.png" alt="Эмблема Vernatun" class="h-10 w-10 shrink-0 object-contain" width="40" height="40" />
+        <img src="images/icon.png" alt="Эмблема Vernatun" class="h-10 w-10 shrink-0 object-contain" width="40" height="40" />
         <div class="min-w-0">
           <p class="font-display text-sm sm:text-base font-bold text-azure leading-tight truncate">Vernatun Armenian Club</p>
           <p class="text-[11px] sm:text-xs text-ink/60 truncate">Москва · разговорный клуб</p>
@@ -133,8 +145,8 @@ fetch('http://127.0.0.1:7867/ingest/69397697-76cd-4a43-ab3e-c53f7c58d472',{metho
         <div class="reveal flex justify-center md:justify-end">
           <div class="relative w-full max-w-md">
             <div class="absolute -inset-0 rounded-2xl border border-sungold/40 bg-gradient-to-br from-white/70 to-parchment shadow-lift" aria-hidden="true"></div>
-            <div class="relative overflow-hidden rounded-xl border border-azure/15 bg-white shadow-card flex items-center justify-center p-0">
-              <img src="gallery/1.jpg" alt="Vernatun — встречи клуба" class="w-full h-auto max-h-80 object-cover" loading="lazy" />
+            <div class="relative overflow-hidden rounded-xl border border-azure/15 bg-white shadow-card flex items-center justify-center p-6 sm:p-8">
+              <img src="images/icon.png" alt="Vernatun — логотип клуба" class="w-full max-w-xs h-auto object-contain" width="640" height="640" loading="lazy" />
             </div>
           </div>
         </div>
@@ -299,14 +311,14 @@ fetch('http://127.0.0.1:7867/ingest/69397697-76cd-4a43-ab3e-c53f7c58d472',{metho
           <div class="relative flex-1 min-w-0 overflow-hidden rounded-xl shadow-card border border-azure/12 bg-parchment">
             <div class="flex transition-transform duration-500 ease-out" :style="'transform: translateX(-' + (current * 100) + '%)'">
               <template x-for="(slide, i) in slides" :key="i">
-                <div class="w-full flex-shrink-0 relative">
-                  <img
-                    :src="slide.src"
-                    :alt="'Атмосфера клуба ' + (i + 1)"
-                    class="w-full h-auto object-contain cursor-pointer"
-                    @click="openLb(slide.src, slide.caption)"
-                    loading="lazy"
-                  />
+                <div class="w-full flex-shrink-0">
+                  <div class="gallery-slide-frame cursor-pointer" @click="openLb(slide.src, slide.caption)">
+                    <img
+                      :src="slide.src"
+                      :alt="'Атмосфера клуба ' + (i + 1)"
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
               </template>
             </div>

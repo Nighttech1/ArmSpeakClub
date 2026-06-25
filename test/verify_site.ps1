@@ -6,6 +6,9 @@ $html = Get-Content -Raw -Encoding UTF8 -Path (Join-Path $root 'index.html')
 $checks = @(
     'format-photo-wrap',
     'zoom-badge',
+    'gallery-slide-frame',
+    'object-position: top center',
+    'images/icon.png',
     'gallery/5.jpg',
     'gallery/6.jpg',
     'gallery/7.jpg',
@@ -33,7 +36,7 @@ foreach ($file in $galleryFiles) {
     }
 }
 
-$formatFiles = @('format-01.png', 'format-02.jpg', 'format-03.png', 'format-04.jpg')
+$formatFiles = @('format-01.png', 'format-02.jpg', 'format-03.png', 'format-04.jpg', 'icon.png')
 foreach ($name in $formatFiles) {
     $file = Join-Path $root "images\$name"
     if (-not (Test-Path $file)) {
