@@ -10,6 +10,8 @@ $checks = @(
     'object-fit: contain',
     '#000000',
     'images/icon.png',
+    'og:title',
+    'og:description',
     'gallery/5.jpg',
     'gallery/6.jpg',
     'openLb(',
